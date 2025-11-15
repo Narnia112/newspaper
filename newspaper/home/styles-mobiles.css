@@ -24,7 +24,7 @@ h3 {
     color: var(--header-text-color);
 }
 .site-title {
-    font-size: 72px;
+    font-size: 8vw; /* changed from fixed 72px to responsive viewport unit */
 }
 footer {
     background-color: var(--footer-bg-color);
@@ -36,6 +36,8 @@ footer {
     height: auto;
     margin: 0;
     text-align: center;
+    border-radius: 10px; /* added */
+    overflow: hidden;    /* added */
 }
 .timer-background {
     position: relative;
@@ -45,6 +47,7 @@ footer {
     display: block;
     width: 100%;
     height: auto;
+    box-shadow: inset 0 12px 28px rgba(0, 0, 0, 0.4); /* added inner shadow for mobile */
 }
 .timer-background::after {
     content: "";
@@ -113,4 +116,11 @@ footer {
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
+}
+
+/* extra small-device tweaks */
+@media (max-width: 420px) {
+    .site-title { font-size: 6.5vw; }
+    .timer-background { width: 92vw; }
+    .btn { width: 92%; }
 }
