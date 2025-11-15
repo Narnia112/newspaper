@@ -1,2 +1,2 @@
 # newspaper
-School newspaper site.
+School newspaper site. Πσπθακια
