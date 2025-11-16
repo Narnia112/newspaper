@@ -4,21 +4,17 @@
         --bg-color: #121212;
         --text-color: #e0e0e0;
         --header-text-color: #bb86fc;
-        --footer-bg-color: #1f1f1f;
+        --footer-bg-color: #001e35;
         --important-text-color: #c81717;
         --btn-color: #1611a1;
     }
 
     @media (prefers-color-scheme: light) {
-        --bg-color: #b7b7b7;
+        --bg-color: #d3d3d3;
         --text-color: #000000;
-        --header-text-color: #6200ee;
-        --footer-bg-color: #828282;
+        --header-text-color: #5303c3;
+        --footer-bg-color: #74ffd8;
         --important-text-color: #2962ff;
-<<<<<<< Updated upstream:newspaper/about/styles.css
-        --btn-color: #536fc3;
-=======
-        --btn-color: #89ceff;uuaaeeuuaaee
->>>>>>> Stashed changes:assets/styles.css
+        --btn-color: #89ceff;
     }
 }
