@@ -7,14 +7,18 @@
         --footer-bg-color: #001e35;
         --important-text-color: #c81717;
         --btn-color: #1611a1;
+        --link-color: #ff5656;
+        --unimportant-text-color: #888888;
     }
 
     @media (prefers-color-scheme: light) {
         --bg-color: #d3d3d3;
         --text-color: #000000;
         --header-text-color: #5303c3;
-        --footer-bg-color: #74ffd8;
+        --footer-bg-color: #63dab8;
         --important-text-color: #2962ff;
         --btn-color: #89ceff;
+        --link-color: #000000;
+        --unimportant-text-color: #888888;
     }
 }

@@ -4,7 +4,6 @@
 --------------------------------------------------------------
 */
 
-/* Base Styles */
 body {
     margin: auto;
     text-align: center;
@@ -38,7 +37,6 @@ footer {
     margin-top: 22px;
 }
 
-/* Timer Background */
 .timer-background {
     width: 75vw;
     height: auto;
@@ -78,7 +76,6 @@ footer {
     width: auto;
 }
 
-/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -97,6 +94,8 @@ footer {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
     -webkit-tap-highlight-color: transparent;
+    width: 10vw;
+    text-align: center;
 }
 
 .btn-arrow {
@@ -136,7 +135,6 @@ footer {
     box-shadow: none;
 }
 
-/* Content Sections */
 #about {
     max-width: 600px;
     margin: 0 auto;
@@ -148,7 +146,6 @@ footer {
     margin: 20px 0;
 }
 
-/* Mobile Breakpoints */
 @media (max-width: 420px) {
     .timer-background {
         width: 92vw;
@@ -159,7 +156,6 @@ footer {
     }
 }
 
-/* Divider */
 hr.style-seven {
     overflow: visible;
     height: 30px;

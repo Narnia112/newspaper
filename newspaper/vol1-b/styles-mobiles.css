@@ -1,8 +1,9 @@
 /*
 --------------------------------------------------------------
-* Styles for Desktop View
+* Styles for Mobile View
 --------------------------------------------------------------
 */
+
 body {
     margin: auto;
     text-align: center;
@@ -51,7 +52,7 @@ footer {
     display: block;
     width: 100%;
     height: auto;
-    box-shadow: inset 0 20px 40px rgba(0, 0, 0, 0.35);
+    box-shadow: inset 0 12px 28px rgba(0, 0, 0, 0.4);
 }
 
 .timer-background::after {
@@ -102,10 +103,9 @@ footer {
     font-size: 1.1em;
 }
 
-.btn:hover,
-.btn:focus {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
     opacity: 0.98;
 }
 
@@ -142,6 +142,16 @@ footer {
 
 .margin-top-bottom {
     margin: 20px 0;
+}
+
+@media (max-width: 420px) {
+    .timer-background {
+        width: 92vw;
+    }
+
+    .btn {
+        width: 92%;
+    }
 }
 
 hr.style-seven {
