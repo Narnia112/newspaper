@@ -32,7 +32,7 @@ h3 {
 }
 
 footer {
-    background: linear-gradient(to top, var(--footer-bg-color) 0%, var(--footer-bg-color) 80%, var(--bg-color) 100%);
+    background: linear-gradient(to top, var(--footer-bg-color) var(--footer-first-stop), var(--footer-bg-color) var(--footer-second-stop), var(--bg-color) var(--footer-third-stop));
     padding: 10px;
     margin-top: 22px;
 }
@@ -94,7 +94,7 @@ footer {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
     -webkit-tap-highlight-color: transparent;
-    width: 10vw;
+    width: min-content !important;
     text-align: center;
 }
 
