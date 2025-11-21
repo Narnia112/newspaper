@@ -12,7 +12,7 @@ body {
 }
 
 p {
-    font-family: 'Comfortaa', sans-serif;
+    font-family: "Comfortaa", sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.6;
@@ -20,7 +20,7 @@ p {
 }
 
 a {
-    font-family: 'Comfortaa', sans-serif;
+    font-family: "Comfortaa", sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.6;
@@ -31,7 +31,7 @@ a {
 h1,
 h2,
 h3 {
-    font-family: 'Tektur', cursive;
+    font-family: "Tektur", cursive;
     font-weight: 700;
     color: var(--header-text-color);
 }
@@ -41,7 +41,12 @@ h3 {
 }
 
 footer {
-    background: linear-gradient(to top, var(--footer-bg-color) var(--footer-first-stop), var(--footer-bg-color) var(--footer-second-stop), var(--bg-color) var(--footer-third-stop));
+    background: linear-gradient(
+        to top,
+        var(--footer-bg-color) var(--footer-first-stop),
+        var(--footer-bg-color) var(--footer-second-stop),
+        var(--bg-color) var(--footer-third-stop)
+    );
     padding: 10px;
     margin-top: 22px;
 }
@@ -71,7 +76,21 @@ footer {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: linear-gradient(to bottom, var(--bg-color), transparent 20%, transparent 80%, var(--bg-color)), linear-gradient(to right, var(--bg-color), transparent 20%, transparent 80%, var(--bg-color));
+    background:
+        linear-gradient(
+            to bottom,
+            var(--bg-color),
+            transparent 20%,
+            transparent 80%,
+            var(--bg-color)
+        ),
+        linear-gradient(
+            to right,
+            var(--bg-color),
+            transparent 20%,
+            transparent 80%,
+            var(--bg-color)
+        );
 }
 
 .img-text {
@@ -103,7 +122,10 @@ footer {
     background: var(--btn-color);
     color: var(--text-color);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-    transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+    transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        opacity 180ms ease;
     -webkit-tap-highlight-color: transparent;
     width: min-content !important;
 }
