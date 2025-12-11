@@ -1,4 +1,5 @@
-var countDownDate = new Date("Dec 7, 2025 11:00:00").getTime();
+var countDownDate = new Date("Dec 14, 2025 10:00:00").getTime();
+var FOUR_HOURS = 4 * 60 * 60 * 1000;
 
 var text11 = "Στη μνήμη των 57 των Τεμπών";
 var text12 =
@@ -53,6 +54,10 @@ var x = setInterval(function () {
     if (distance < 0) {
         clearInterval(x);
         document.getElementById("timer").innerHTML =
-            "Έληξε η αντίστροφη μέτρηση!";
+            "Καλώς ήρθατε στο παζάρι μας!";
+        document.getElementById("timer1").classList.add("no-display");
+    }
+    if (distance < FOUR_HOURS) {
+        document.getElementById("hide-after").classList.add("no-display");
     }
 }, 1000);

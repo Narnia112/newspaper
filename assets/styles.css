@@ -24,4 +24,8 @@
     --footer-first-stop: 0%;
     --footer-second-stop: 80%;
     --footer-third-stop: 100%;
+
+    .no-display {
+        display: none;
+    }
 }

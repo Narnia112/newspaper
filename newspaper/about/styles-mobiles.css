@@ -42,7 +42,7 @@ footer {
     margin-top: 22px;
 }
 
-.timer-background {
+.group-pic {
     width: 75vw;
     height: auto;
     margin: 0;
@@ -53,14 +53,14 @@ footer {
     overflow: hidden;
 }
 
-.timer-background img {
+.group-pic img {
     display: block;
     width: 100%;
     height: auto;
     box-shadow: inset 0 12px 28px rgba(0, 0, 0, 0.4);
 }
 
-.timer-background::after {
+.group-pic::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -185,4 +185,56 @@ hr.style-seven {
     border-color: var(--text-color);
     border-width: 1px 0 0 0;
     border-radius: 20px;
+}
+
+/* 🖼️ Main Container for Positioning */
+.team-photo-container {
+  position: relative; /* **Crucial:** Sets the reference point for absolute positioning */
+  max-width: 1000px; /* Example max size for your photo */
+  margin: 0 auto;
+  margin-bottom: 20px !important;
+}
+
+/* 🏞️ Make sure the image scales but stays within the container */
+.group-photo {
+  width: 75vw;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+/* 👤 The Invisible Hotspot Areas */
+.person-hotspot {
+  position: absolute;
+  /* These values are set inline (top, left, width, height) in the HTML based on where the person is. */
+  cursor: pointer;
+  z-index: 10; /* Ensures the hotspot is above the image */
+}
+
+/* 💡 The Info Box (Shared from previous solution) */
+.info-box {
+  position: absolute;
+  /* You can adjust where the box appears relative to the hotspot */
+  bottom: 100%; /* Place it above the hotspot */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  /* Appearance */
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.85); 
+  color: white;
+  white-space: nowrap; /* Prevents text from wrapping */
+  border-radius: 5px;
+
+  /* Hidden by default */
+  opacity: 0;
+  pointer-events: none; /* Allows clicks to go through it when hidden */
+  transition: opacity 0.3s ease-in-out;
+  z-index: 20; /* Ensures the box is above everything else */
+}
+
+/* 👆 MOBILE: Style for the active/tapped state (used with JS) */
+.person-hotspot .info-box.active {
+  opacity: 1;
+  pointer-events: auto;
 }
