@@ -214,3 +214,22 @@ hr.style-seven {
     font-size: 0.9em;
     color: var(--unimportant-text-color);
 }
+
+.img-photo {
+    border-radius: 12px;
+    width: 75vw;
+}
+
+a {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--link-color);
+}
+
+.end-box {
+    border-radius: 12px;
+    border-width: 8px;
+    border-color: var(--footer-bg-color);
+}

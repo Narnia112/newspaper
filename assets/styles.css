@@ -26,6 +26,8 @@
     --footer-second-stop: 80%;
     --footer-third-stop: 100%;
 
+    scroll-behavior: smooth;
+
     .no-display {
         display: none;
     }
