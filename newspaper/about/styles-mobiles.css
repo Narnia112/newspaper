@@ -189,26 +189,27 @@ hr.style-seven {
 
 /* 🖼️ Main Container for Positioning */
 .team-photo-container {
-  position: relative; /* **Crucial:** Sets the reference point for absolute positioning */
-  max-width: 1000px; /* Example max size for your photo */
+  position: relative; /* sets the reference point for absolute positioning */
+  max-width: 100vw;    /* limit the visible width, let image fill this */
   margin: 0 auto;
-  margin-bottom: 20px !important;
+  margin-top: 20px !important;
 }
 
-/* 🏞️ Make sure the image scales but stays within the container */
+/* ensure the image fills the container */
 .group-photo {
-  width: 75vw;
+  width: 75%;
   height: auto;
   display: block;
   margin: auto;
+  border-radius: 12px;
 }
 
-/* 👤 The Invisible Hotspot Areas */
+/* invisible hotspots — sizes are % of the overlay (so % matches image) */
 .person-hotspot {
   position: absolute;
-  /* These values are set inline (top, left, width, height) in the HTML based on where the person is. */
   cursor: pointer;
-  z-index: 10; /* Ensures the hotspot is above the image */
+  z-index: 25;
+  pointer-events: auto; /* hotspot itself receives clicks/taps */
 }
 
 /* 💡 The Info Box (Shared from previous solution) */
@@ -238,3 +239,12 @@ hr.style-seven {
   opacity: 1;
   pointer-events: auto;
 }
+
+.name{
+    color: var(--light-text-color);
+}
+
+.degree{
+    color: var(--light-text-color);
+}
+

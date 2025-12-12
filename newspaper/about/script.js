@@ -1,20 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const TIMEOUT_MS = 3000; // milliseconds before infobox auto-closes
+
   const hotspots = document.querySelectorAll('.person-hotspot');
 
   hotspots.forEach(hotspot => {
-    // 👆 MOBILE/TABLET: Add event listener for tap/click
+    hotspot._infoTimeoutId = null;
+
     hotspot.addEventListener('click', () => {
       const infoBox = hotspot.querySelector('.info-box');
 
-      // Toggle the 'active' class to show/hide the box
-      infoBox.classList.toggle('active');
+      const clearTimeoutFor = (hp) => {
+        if (hp._infoTimeoutId) {
+          clearTimeout(hp._infoTimeoutId);
+          hp._infoTimeoutId = null;
+        }
+      };
 
-      // (Optional) Close other active boxes when a new person is tapped
+      const nowActive = infoBox.classList.toggle('active');
+
       hotspots.forEach(otherHotspot => {
         if (otherHotspot !== hotspot) {
-          otherHotspot.querySelector('.info-box').classList.remove('active');
+          const otherInfo = otherHotspot.querySelector('.info-box');
+          if (otherInfo) otherInfo.classList.remove('active');
+          clearTimeoutFor(otherHotspot);
         }
       });
+
+      clearTimeoutFor(hotspot);
+
+      if (nowActive) {
+        hotspot._infoTimeoutId = setTimeout(() => {
+          const ib = hotspot.querySelector('.info-box');
+          if (ib) ib.classList.remove('active');
+          hotspot._infoTimeoutId = null;
+        }, TIMEOUT_MS);
+      }
     });
   });
 });
