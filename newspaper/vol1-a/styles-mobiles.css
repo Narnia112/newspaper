@@ -217,6 +217,7 @@ hr.style-seven {
 
 .img-photo {
     border-radius: 12px;
+    height: auto;
     width: 75vw;
 }
 
@@ -231,5 +232,37 @@ a {
 .end-box {
     border-radius: 12px;
     border-width: 8px;
-    border-color: var(--footer-bg-color);
+    border-color: var(--header-text-color);
+    width: max-content;
+    max-width: 75vw;
+    border-style: double;
+    padding: 12px;
+    margin: auto;
+}
+
+.fragment {
+    color: var(--text-color);
+}
+.fragment-holder {
+    text-align: left;
+    background-color: var(--intense-neutral-color);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.navbox {
+    width: 50vw;
+    margin: auto;
+    background-color: var(--neutral-color);
+    border-radius: 16px;
+    padding: 1px 22px;
+    margin-top: 12px;
+}
+.scroll-to-top-container {
+    position: fixed;
+    top: 85vh;
+    left: 80vw;
+}
+.material-symbols-outlined {
+    color: var(--text-color);
 }

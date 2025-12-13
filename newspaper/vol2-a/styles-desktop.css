@@ -206,7 +206,6 @@ hr.style-seven {
 
 .img-photo {
     border-radius: 12px;
-    
 }
 
 .block {
@@ -215,19 +214,19 @@ hr.style-seven {
 }
 
 .side-by-side {
-  display: flex;
-  align-items: center;     /* keeps image and text nicely aligned */
-  gap: 1rem;               /* space between image and text */
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
 }
 
 .side-by-side img {
-  max-width: 50%;          /* keeps it from overrunning the layout */
-  height: auto;
+    max-width: 50%;
+    height: auto;
 }
 
 .lezanta {
@@ -276,4 +275,20 @@ a {
 }
 .material-symbols-outlined {
     color: var(--text-color);
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+}
+
+.icon {
+    max-width: 7.5vw;
+    height: auto;
 }

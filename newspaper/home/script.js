@@ -1,5 +1,5 @@
 var countDownDate = new Date("Dec 14, 2025 10:00:00").getTime();
-var FOUR_HOURS = 4 * 60 * 60 * 1000;
+var FOUR_HOURS = -(4 * 60 * 60 * 1000);
 
 var text11 = "Στη μνήμη των 57 των Τεμπών";
 var text12 =
@@ -41,23 +41,37 @@ var x = setInterval(function () {
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("timer").innerHTML =
-        days +
-        " Μέρες " +
-        hours +
-        " Ώρες " +
-        minutes +
-        " Λεπτά " +
-        seconds +
-        " Δευτερόλεπτα ";
-
-    if (distance < 0) {
+    if (distance > 0) {
+        document.getElementById("timer").innerHTML =
+            days +
+            " Μέρες " +
+            hours +
+            " Ώρες " +
+            minutes +
+            " Λεπτά " +
+            seconds +
+            " Δευτερόλεπτα ";
+    } 
+    if (distance < 0 && distance > FOUR_HOURS) {
         clearInterval(x);
         document.getElementById("timer").innerHTML =
             "Καλώς ήρθατε στο παζάρι μας!";
         document.getElementById("timer1").classList.add("no-display");
+    } else  if (distance < FOUR_HOURS) {
+        countDownDate = new Date("Dec 25, 2025 00:00:00").getTime();
+        setInterval(x, 1000);
+        document.getElementById("timer").innerHTML =
+            days +
+            " Μέρες " +
+            hours +
+            " Ώρες " +
+            minutes +
+            " Λεπτά " +
+            seconds +
+            " Δευτερόλεπτα ";
+        document.getElementById("timer1").classList.remove("no-display");
+        document.getElementById("timer1").innerHTML =
+            "μέχρι τα Χριστούγεννα!";
     }
-    if (distance < FOUR_HOURS) {
-        document.getElementById("hide-after").classList.add("no-display");
-    }
+
 }, 1000);
