@@ -11,24 +11,21 @@ body {
     overflow-x: hidden;
 }
 
-p,
-li,
-q {
+p {
     font-family: "Comfortaa", sans-serif;
-    font-weight: 900;
-    font-size: 14px;
-    line-height: 2.25;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
     color: var(--text-color);
 }
 
-li {
-    margin-bottom: 16px;
-    text-align: left;
-}
-
-u {
-    text-decoration: wavy underline;
-    text-align: left !important;
+a {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+    text-decoration: none;
+    color: var(--link-color);
 }
 
 h1,
@@ -39,13 +36,14 @@ h3 {
     color: var(--header-text-color);
 }
 
-ol,
-ul {
-    padding-left: 0;
+iframe {
+    margin: auto;
+    width: 95vw;
+    height: 95vh;
 }
 
 .site-title {
-    font-size: 5vw;
+    font-size: 8vw;
 }
 
 footer {
@@ -110,6 +108,7 @@ footer {
 #timer1 {
     color: var(--important-text-color);
     width: auto;
+    font-size: small;
 }
 
 .btn {
@@ -174,27 +173,6 @@ footer {
     box-shadow: none;
 }
 
-#about {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-    padding: 0 1rem;
-}
-
-.margin-top-bottom {
-    margin: 20px 0;
-}
-
-@media (max-width: 420px) {
-    .timer-background {
-        width: 92vw;
-    }
-
-    .btn {
-        width: 92%;
-    }
-}
-
 hr.style-seven {
     overflow: visible;
     height: 30px;
@@ -204,65 +182,28 @@ hr.style-seven {
     border-radius: 20px;
 }
 
-.content {
-    margin: auto;
-    width: 75vw;
+@media (max-width: 420px) {
+    .site-title {
+        font-size: 6.5vw;
+    }
+
+    .timer-background {
+        width: 92vw;
+    }
+
+    .btn {
+        width: 92%;
+    }
 }
 
-.authors {
-    text-align: right;
-    font-size: 0.9em;
-    color: var(--unimportant-text-color);
-}
-
-.img-photo {
-    border-radius: 12px;
-    height: auto;
-    width: 75vw;
-}
-
-a {
-    font-family: "Comfortaa", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.6;
-    color: var(--link-color);
-}
-
-.end-box {
-    border-radius: 12px;
-    border-width: 8px;
-    border-color: var(--header-text-color);
-    width: max-content;
-    max-width: 75vw;
-    border-style: double;
-    padding: 12px;
+.small-width {
+    width: 90vw;
     margin: auto;
 }
 
-.fragment {
-    color: var(--text-color);
-}
-.fragment-holder {
-    text-align: left;
-    background-color: var(--intense-neutral-color);
-    border-radius: 8px;
-    padding: 8px;
-}
-
-.navbox {
-    width: 50vw;
-    margin: auto;
-    background-color: var(--neutral-color);
-    border-radius: 16px;
-    padding: 1px 22px;
+.book-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     margin-top: 12px;
-}
-.scroll-to-top-container {
-    position: fixed;
-    top: 85vh;
-    left: 80vw;
-}
-.material-symbols-outlined {
-    color: var(--text-color);
 }
