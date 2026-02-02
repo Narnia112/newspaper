@@ -1,38 +1,153 @@
-:root {
-    @media (prefers-color-scheme: dark) {
-        --bg-color: #121212;
-        --text-color: #e0e0e0;
-        --header-text-color: #8a4bd6;
-        --footer-bg-color: #001e35;
-        --important-text-color: #c81717;
-        --btn-color: #1611a1;
-        --link-color: #da7134;
-        --unimportant-text-color: #888888;
-        --neutral-color: #636363;
-        --intense-neutral-color: #3f3f3f;
-    }
+/* Reset + smoothing + sensible box model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
-    @media (prefers-color-scheme: light) {
-        --bg-color: #ffffff;
-        --text-color: #000000;
-        --header-text-color: #5303c3;
-        --footer-bg-color: #63dab8;
-        --important-text-color: #2962ff;
-        --btn-color: #89ceff;
-        --link-color: #000000;
-        --unimportant-text-color: #888888;
-        --neutral-color: #b8b8b8;
-        --intense-neutral-color: #888888;
-        --light-text-color: #ffffff;
-    }
+/* Core variables (light defaults). Dark mode overrides below. */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #0b1220;
+    --light-text-color: #ffffff;
+    --header-text-color: #5303c3;
+    --footer-bg-color: #63dab8;
+    --important-text-color: #2962ff;
+    --btn-grad-start: #89ceff;
+    --btn-grad-end: #2962ff;
+    --link-color: #000000;
+    --unimportant-text-color: #666666;
+    --neutral-color: #e6e6e6;
+    --intense-neutral-color: #f1f1f1;
+    --card-bg: color-mix(in srgb, var(--bg-color) 90%, black 2%);
+    --max-content-width: 1100px;
 
     --footer-first-stop: 0%;
     --footer-second-stop: 80%;
     --footer-third-stop: 100%;
+}
 
-    scroll-behavior: smooth;
-
-    .no-display {
-        display: none;
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #0b1020;
+        --text-color: #e6eef7;
+        --light-text-color: #ffffff;
+        --header-text-color: #8a4bd6;
+        --footer-bg-color: #001e35;
+        --important-text-color: #ff6b6b;
+        --btn-grad-start: #2b2b8f;
+        --btn-grad-end: #8a4bd6;
+        --link-color: #ffb87d;
+        --unimportant-text-color: #9aa0a6;
+        --neutral-color: #33363a;
+        --intense-neutral-color: #232428;
+        --card-bg: color-mix(in srgb, var(--bg-color) 85%, white 4%);
     }
+}
+
+/* utility to hide elements */
+.no-display {
+    display: none !important;
+}
+
+/* page container */
+.content {
+    max-width: var(--max-content-width);
+    margin: 24px auto;
+    padding: 16px;
+    width: calc(100% - 32px);
+    transition: background-color 180ms linear;
+}
+
+/* header polish: subtle gradient + blur so it feels modern and sticky */
+.site-header {
+    background: linear-gradient(90deg, color-mix(in srgb, var(--header-text-color) 15%, transparent), transparent 60%);
+    padding: 14px 18px;
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* title with gradient text */
+.site-title {
+    display: inline-block;
+    background-image: linear-gradient(90deg, var(--header-text-color), var(--btn-grad-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+/* modern card look for articles and blocks */
+.content>article,
+.content>.block,
+.content>section {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 24px rgba(6, 22, 40, 0.06);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+/* subtle lift on hover/focus for pointer-capable devices */
+@media (hover: hover) {
+
+    .content>article:hover,
+    .content>.block:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 40px rgba(6, 22, 40, 0.08);
+    }
+}
+
+/* modern gradient buttons (keeps existing .btn rules but gives better default visual) */
+.btn {
+    background: linear-gradient(90deg, var(--btn-grad-start), var(--btn-grad-end)) !important;
+    color: var(--light-text-color) !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12) !important;
+    transition: transform 160ms ease, box-shadow 160ms ease !important;
+    border-radius: 12px !important;
+}
+
+/* pressed state */
+.btn:active {
+    transform: translateY(1px) scale(0.998);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* accessible focus */
+.btn:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--btn-grad-end) 25%, black);
+    outline-offset: 4px;
+}
+
+/* footer polish */
+.site-footer {
+    background: linear-gradient(to top,
+            var(--footer-bg-color) var(--footer-first-stop),
+            color-mix(in srgb, var(--footer-bg-color) 65%, var(--bg-color) 15%) var(--footer-second-stop),
+            var(--bg-color) var(--footer-third-stop));
+    padding: 18px;
+    margin-top: 28px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* make images behave nicely inside cards */
+.content img {
+    max-width: 10vw;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* small helper for readable author text */
+.authors {
+    color: var(--unimportant-text-color);
+    font-size: 0.95rem;
 }
